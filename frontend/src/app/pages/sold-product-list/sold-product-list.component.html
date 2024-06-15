@@ -1,0 +1,45 @@
+<h1 class="display-4">My Products</h1>
+
+<div class="products-container">
+  <table class="table table-striped text-center">
+    <thead>
+      <tr>
+        <th scope="col">Product #</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+        <th scope="col">Shipping Info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <th class="align-middle" scope="row">{{ product.product.id }}</th>
+        <td><img [src]="product.product.photo" alt="{{ product.product.name }}" style="width: 50px;"></td>
+        <td class="align-middle">{{ product.product.name }}</td>
+        <td class="align-middle">{{ product.product.description }}</td>
+        <td>{{ product.product.priceInEth  }} ETH / {{ product.product.priceInEuro | currency: 'EUR' }}</td>
+        <td>{{ product.isProductDeleted ? 'Deleted' : (
+          product.isProductReserved && !product.isOrderSend? 'Reserved (wait to be send)' : (
+            product.isOrderSend && !product.isOrderReleased ? 'Send (wait to receive funds)' : (
+              product.isOrderReleased ? 'Sold and Payed' : 'New'))) }}</td>
+        <td class="align-middle">
+          <button *ngIf="product.isProductReserved && !product.isOrderSend" class="btn btn-success" (click)="sendOrder(product.id)">Mark Product As Send</button>
+          <button *ngIf="product.isOrderSend && !product.isOrderReleased" class="btn btn-info" (click)="getMyFunds(product.id)">Want my funds</button>
+          <button *ngIf="!product.isDeleted && !product.isProductReserved" class="btn btn-info mt-1" routerLink="/edit-product/{{ product.id }}">Edit</button>
+          <button *ngIf="!product.isDeleted && !product.isProductReserved" class="btn btn-danger mt-1" (click)="deleteProduct(product.id)">Delete</button>
+        </td>
+        <th class="align-middle" scope="row">{{ product.shippingInfo }}</th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="pagination-controls">
+  <button (click)="previousPage()" [disabled]="page === 1" class="pagination-button">Previous</button>
+  <span class="pagination-info">Page {{ page }} of {{ totalPages }}</span>
+  <button (click)="nextPage()" [disabled]="page === totalPages" class="pagination-button">Next</button>
+</div>

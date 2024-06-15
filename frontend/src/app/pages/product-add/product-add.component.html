@@ -1,0 +1,75 @@
+<h1 class="display-4 mt-5 text-center">Add New Product</h1>
+<div class="form-container">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <!-- Product Name -->
+    <div class="form-group">
+      <label for="productName">Title</label>
+      <input
+        type="text"
+        class="form-control form-control-lg"
+        id="productName"
+        name="productName"
+        [(ngModel)]="name"
+        required
+        placeholder="Enter product title"
+      />
+      <div *ngIf="form.submitted && form.controls['productName']?.invalid">
+        <span class="text-danger">Product title is required.</span>
+      </div>
+    </div>
+
+    <!-- Product Price -->
+    <div class="form-group">
+      <label for="productPrice">Price</label>
+      <input
+        type="number"
+        class="form-control form-control-lg"
+        id="productPrice"
+        name="productPrice"
+        [(ngModel)]="price"
+        required
+        min="0"
+        placeholder="Enter product price"
+      />
+      <div *ngIf="form.submitted && form.controls['productPrice']?.invalid">
+        <span class="text-danger">Product price is required.</span>
+      </div>
+    </div>
+
+    <!-- Product Photo Link -->
+    <div class="form-group">
+      <label for="productIcon">Photo Link</label>
+      <input
+        type="text"
+        class="form-control form-control-lg"
+        id="productIcon"
+        name="productIcon"
+        [(ngModel)]="photo"
+        placeholder="Enter URL for product photo"
+      />
+    </div>
+
+    <!-- Product Description -->
+    <div class="form-group">
+      <label for="productDescription">Description</label>
+      <textarea
+        class="form-control form-control-lg"
+        id="productDescription"
+        name="productDescription"
+        [(ngModel)]="description"
+        placeholder="Enter product description"
+      ></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+      <button
+        type="submit"
+        class="btn-primary btn-block"
+        [disabled]="!form.form.valid"
+      >
+        Add Product
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,41 @@
+<div class="w3-top">
+  <div class="w3-bar w3-wide w3-padding w3-card">
+    <!-- Container for logo -->
+    <div class="logo-container">
+      <a routerLink="/home" class="w3-bar-item navbar-brand">
+        <img src="../../../assets/logo-white-transperant.png" alt="Logo">
+      </a>
+    </div>
+    <!-- Container for right-aligned links and buttons -->
+    <div class="nav-right">
+      <div class="products-container dropdown">
+        <a (click)="handleProductsClick($event)" class="nav-item nav-link btn-main">Products</a>
+      </div>
+      <button *ngIf="!isWalletConnected" (click)="connectToMetaMask()" class="nav-item nav-link btn">Connect to MetaMask</button>
+      <div *ngIf="isWalletConnected" class="wallet-info">
+        <a routerLink="/myOrders" class="nav-item nav-link btn-main">My Orders</a>
+      </div>
+      <div *ngIf="isWalletConnected" class="wallet-info">
+        <a routerLink="/seller/product/new" class="nav-item nav-link btn-main">Sell Product</a>
+      </div>
+      <div *ngIf="isWalletConnected" class="wallet-info">
+        <a routerLink="/seller/products" class="nav-item nav-link btn-main">My Products</a>
+      </div>
+      <div *ngIf="isWalletConnected" class="wallet-info">
+        <span class="nav-item nav-link icon dropdown">
+          <a routerLink="/profile" class="nav-item nav-link btn-main"><i class="fas fa-wallet"></i> {{ walletAddress }}</a>
+        </span>
+      </div>
+      <div *ngIf="isWalletConnected" class="wallet-info">
+        <span class="nav-item nav-link icon">
+          <i class="fas fa-link"></i> {{ chainName }}
+        </span>
+      </div>
+      <div *ngIf="isWalletConnected" class="wallet-info">
+        <span class="nav-item nav-link icon">
+          <i class="fas fa-coins"></i> {{ ethBalance }} ETH
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

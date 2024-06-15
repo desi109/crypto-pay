@@ -1,0 +1,90 @@
+.product-detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 135px 100px;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.product-image {
+  flex: 1;
+  text-align: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-price {
+  font: bold 1.8em sans-serif;
+  color: #ff9b55;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.product-info {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-left: 20px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-info h2 {
+  margin-top: 0;
+}
+
+.product-info p {
+  margin: 10px 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  font: 1.3em sans-serif;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+  /* Style the input fields */
+  input,
+  textarea {
+    font: 1.3em sans-serif;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 100%;
+    margin: 10px 0px 0px;
+    box-sizing: border-box;
+  }
+
+.btn-primary {
+  background: linear-gradient(to right, #f6b93b, #e58e26);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #e58e26, #f6b93b);
+}
+
+

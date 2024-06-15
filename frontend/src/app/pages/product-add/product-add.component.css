@@ -1,0 +1,96 @@
+body {
+    background-color: #343a40;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    color: white;
+    padding-top: 90px;
+    padding-bottom: 20px;
+    font: bold 3.0em sans-serif;
+    text-align: center;
+  }
+  
+  label {
+    color: white;
+    font: bold 1.6em sans-serif;
+    padding: 5px;
+  }
+  
+  .form-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 150%;
+    max-width: 700px;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Style the input fields */
+  .form-control {
+    font: 1.3em sans-serif;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    box-shadow: none;
+    outline: none;
+  }
+  
+  /* Style the Add Product button */
+  .btn-primary {
+    background: linear-gradient(to right, rgb(254, 223, 52), rgb(255, 155, 85));
+    padding: 0.5rem 1rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font: bold 1.5em sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 15px;
+  }
+  
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background: linear-gradient(to right, rgb(255, 155, 85), rgb(254, 223, 52));
+    outline: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5em;
+      padding-top: 70px;
+      padding-bottom: 15px;
+    }
+  
+    .form-container {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .form-control {
+      font-size: 1.1em;
+    }
+  
+    .btn-primary {
+      font-size: 1.3em;
+      padding: 0.5rem;
+    }
+  }

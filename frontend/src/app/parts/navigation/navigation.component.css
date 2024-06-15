@@ -1,0 +1,61 @@
+/* Navigation bar styles */
+.w3-top {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .w3-bar {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .logo-container {
+    margin-right: auto;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+  }
+  
+  .nav-item.nav-link {
+    cursor: pointer;
+    margin-right: 20px;
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .wallet-info {
+    font-family: Arial, sans-serif;
+  }
+  
+  .nav-item.nav-link.icon {
+    display: flex;
+    align-items: center;
+  }
+  
+  .products-container, .wallet-info {
+    position: relative; /* Position relative for dropdown */
+  }
+  
+  /* Button styles */
+  .btn {
+    color: black;
+    font: bold 1.1em sans-serif;
+    padding: 0.5rem 1rem;
+    background: rgb(255, 182, 58);
+    background: -webkit-linear-gradient(to right, rgb(254, 223, 52), rgb(255, 155, 85));
+    background: linear-gradient(to right, rgb(254, 223, 52), rgb(255, 155, 85));
+  }
+  
+  .logo-container img {
+    height: 40px;
+  }

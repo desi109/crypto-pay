@@ -1,0 +1,14 @@
+<div class="product-container">
+  <div class="product-image-container">
+    <img [src]="productInfo.photo" alt="Product Image" class="product-image"/>
+    <div class="overlay">
+      <button class="buy-button" (click)="seeDetailsProduct()">
+        See Details <i class="fa fa-shopping-cart"></i>
+      </button>
+    </div>
+  </div>
+  <p class="product-info">
+    {{ productInfo.name }}<br />
+    <b class="product-price">{{ this.priceInEuro | currency: 'EUR' }}</b>
+  </p>
+</div>

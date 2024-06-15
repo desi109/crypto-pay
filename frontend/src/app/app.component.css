@@ -1,0 +1,4 @@
+.home-container {
+    background: rgb(31,32,46);
+    background: linear-gradient(144deg, rgba(31,32,46,1) 19%, rgba(40,36,46,1) 55%, rgba(179,111,27,1) 99%);
+  }

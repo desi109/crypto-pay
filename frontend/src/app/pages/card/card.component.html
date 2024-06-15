@@ -1,0 +1,11 @@
+<h1 class="display-4 mt-5 text-center">Find your product:</h1>
+<div class="product-list">
+  <div *ngFor="let productInfo of products" class="product-card">
+    <app-product-item-card [productInfo]="productInfo"></app-product-item-card>
+  </div>
+</div>
+<div class="pagination-controls">
+  <button (click)="previousPage()" [disabled]="page === 1" class="pagination-button">Previous</button>
+  <span class="pagination-info">Page {{ page }} of {{ totalPages }}</span>
+  <button (click)="nextPage()" [disabled]="page === totalPages" class="pagination-button">Next</button>
+</div>

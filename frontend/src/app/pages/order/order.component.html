@@ -1,0 +1,33 @@
+<h1 class="display-4 mt-5 text-center">My Orders</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Order #</th>
+      <th scope="col">Product #</th>
+      <th scope="col">Product Icon</th>
+      <th scope="col">Title</th>
+      <th scope="col">Total</th>
+      <th scope="col">Status</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <th scope="row">{{ order.id }}</th>
+      <th scope="row">{{ order.product.id }}</th>
+      <td><img [src]="order.product.photo" alt="{{ order.product.name }}" style="width: 50px;"></td>
+      <td>{{ order.product.name }}</td>
+      <td>{{ order.product.priceInEth  }} ETH / {{ order.product.priceInEuro | currency: 'EUR' }}</td>
+      <td>{{ order.isOrderCanceled ? 'Canceled' : (order.isReleased ? 'Released' : (order.isOrderSend ? (!order.isOrderPayed ? 'Send by the seller' : 'Received and Payed' ) : 'Pending')) }}</td>
+      <td>
+        <button *ngIf="order.isOrderSend && !order.isOrderReleased && !order.isOrderCanceled && !order.isOrderPayed" class="btn btn-success" (click)="releaseFunds(order.id)">Release Funds</button>
+        <button *ngIf="!order.isOrderReleased && !order.isOrderCanceled && !order.isOrderSend" class="btn btn-warning" (click)="returnFunds(order.id)">Cancel Order</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="pagination-controls">
+  <button (click)="previousPage()" [disabled]="page === 1" class="pagination-button">Previous</button>
+  <span class="pagination-info">Page {{ page }} of {{ totalPages }}</span>
+  <button (click)="nextPage()" [disabled]="page === totalPages" class="pagination-button">Next</button>
+</div>
